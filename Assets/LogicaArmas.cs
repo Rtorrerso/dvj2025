@@ -21,8 +21,9 @@ public class LogicaArmas : MonoBehaviour
     public int balasEnCartucho=12;
 
     [Header("Enemigo")]
-    public int vidaEnemigo=100;
-    public int dano=20;
+    private vida VidaEnemigo;
+    public GameObject Enemigo;
+    public int dano = 20;
 
 
     void Start()
@@ -44,11 +45,14 @@ public class LogicaArmas : MonoBehaviour
                 {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
                     Debug.Log("Le DI!!!!");
-                    vidaEnemigo -= dano;
-                    if (vidaEnemigo <= 0)
-                    {
-                        Destroy(hit.collider.gameObject,0f);
-                    }
+                    Enemigo = hit.collider.gameObject;
+                    VidaEnemigo = Enemigo.GetComponent<vida>();
+                    VidaEnemigo.RecibirDaño(dano);
+                    //vidaEnemigo -= dano;
+                    //if (vidaEnemigo <= 0)
+                    //{
+                    //    Destroy(hit.collider.gameObject,0f);
+                    //}
                 }
                 else
                 {

@@ -811,7 +811,7 @@ MonoBehaviour:
   sonSinBalas: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   totalBalas: 100
   balasEnCartucho: 12
-  vidaEnemigo: 100
+  Enemigo: {fileID: 0}
   dano: 20
 --- !u!4 &648324398 stripped
 Transform:
@@ -1506,6 +1506,7 @@ GameObject:
   - component: {fileID: 1678773000}
   - component: {fileID: 1678772999}
   - component: {fileID: 1678772998}
+  - component: {fileID: 1678773002}
   m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
@@ -1592,6 +1593,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678773002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678772997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0ad41f2c8502e4492b91141bba88a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valor: 100
 --- !u!1001 &1682138820
 PrefabInstance:
   m_ObjectHideFlags: 0
