@@ -30,7 +30,7 @@ public class LogicaArmas : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        layerMask = LayerMask.GetMask("Wall", "Character");
+        layerMask = LayerMask.GetMask("Wall","Enemy");
     }
 
     // Update is called once per frame

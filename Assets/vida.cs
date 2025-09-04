@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class vida : MonoBehaviour
 {
+    public TMP_Text TxtVida;
     public float valor = 100;
     // Start is called before the first frame update
     void Start()
     {
-
+        TxtVida.text = valor.ToString();
     }
 
     // Update is called once per frame
@@ -19,6 +23,7 @@ public class vida : MonoBehaviour
     public void RecibirDaño(float daño)
     {
         valor -= daño;
+        TxtVida.text = valor.ToString();
         if (valor <= 0)
         {
             valor = 0;
