@@ -24,13 +24,15 @@ public class LogicaArmas : MonoBehaviour
     private vida VidaEnemigo;
     public GameObject Enemigo;
     public int dano = 20;
+    public GameObject CanvaMira;
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        layerMask = LayerMask.GetMask("Wall","Enemy");
+        layerMask = LayerMask.GetMask("Wall", "Enemy");
+        //CanvaMira.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class LogicaArmas : MonoBehaviour
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.green);
                     Debug.Log("Le DI!!!!");
                     Enemigo = hit.collider.gameObject;
+                    //CanvaMira.SetActive(true);
                     VidaEnemigo = Enemigo.GetComponent<vida>();
                     VidaEnemigo.RecibirDaño(dano);
                     //vidaEnemigo -= dano;
