@@ -2248,6 +2248,20 @@ MonoBehaviour:
   TxtVida: {fileID: 1371653460}
   Eanimator: {fileID: 0}
   valor: 100
+--- !u!136 &1858271716
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858271713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.76
+  m_Height: 2.08
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.88, z: 0}
 --- !u!1001 &1971687659
 PrefabInstance:
   m_ObjectHideFlags: 0
