@@ -28,6 +28,7 @@ public class vida : MonoBehaviour
         TxtVida.text = valor.ToString();
         if (valor <= 0)
         {
+            Debug.Log("muere malo!");
             valor = 0;
             //Destroy(this.gameObject, 0f);
             Eanimator.CrossFadeInFixedTime("fallBack", 0f);
