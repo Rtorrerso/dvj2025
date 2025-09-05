@@ -28,6 +28,17 @@ public class busqueda : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name == "FPSController")
+        {
+            Debug.Log("Te encontre!!!");
+            //transform.parent.position = other.transform.position;
+            //transform.parent.LookAt(other.transform);
+            StartCoroutine(SmoothLookAt(other.transform));
+        }
+    }
+
     private IEnumerator SmoothLookAt(Transform target)
     {
         Quaternion startRotation = Parent.rotation;

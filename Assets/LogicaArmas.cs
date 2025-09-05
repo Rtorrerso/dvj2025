@@ -25,6 +25,7 @@ public class LogicaArmas : MonoBehaviour
     public GameObject Enemigo;
     public int dano = 20;
     public GameObject CanvaMira;
+    public GameObject sangre;
 
 
     void Start()
@@ -51,6 +52,14 @@ public class LogicaArmas : MonoBehaviour
                     //CanvaMira.SetActive(true);
                     VidaEnemigo = Enemigo.GetComponent<vida>();
                     VidaEnemigo.RecibirDaño(dano);
+                    //GameObject newSangrado = Instantiate(sangre, hit.collider.transform.position, hit.collider.transform.rotation);
+                    // hit es tu RaycastHit
+                    Vector3 pos = hit.point + hit.normal * 0.01f; // pequeño offset
+                    Quaternion rot = Quaternion.LookRotation(hit.normal); // +Z del prefab apunta fuera de la superficie
+
+                    GameObject sangreGO = Instantiate(sangre, pos, rot);
+                    //sangreGO.transform.SetParent(hit.collider.transform); // opcional: se mueve con el objeto
+
                     //vidaEnemigo -= dano;
                     //if (vidaEnemigo <= 0)
                     //{
