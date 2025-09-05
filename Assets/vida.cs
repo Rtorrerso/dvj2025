@@ -30,10 +30,9 @@ public class vida : MonoBehaviour
         {
             Debug.Log("muere malo!");
             valor = 0;
-            //Destroy(this.gameObject, 0f);
+            //
             Eanimator.CrossFadeInFixedTime("fallBack", 0f);
             Destroy(this.gameObject, 1.5f);
-            
         }
     }
 
