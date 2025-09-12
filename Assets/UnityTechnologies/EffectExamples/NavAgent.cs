@@ -7,10 +7,12 @@ public class NavAgent : MonoBehaviour
 {
     public Camera camera;
     public NavMeshAgent agente;
+
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,7 +24,13 @@ public class NavAgent : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
                 agente.SetDestination(hit.point);
+                animator.CrossFadeInFixedTime("Walk", 0f);
+            }
+            else
+            {
+                animator.CrossFadeInFixedTime("Idle", 0f);
             }
         }
     }
